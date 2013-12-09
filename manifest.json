@@ -1,0 +1,15 @@
+{
+ "manifest_version": 2,
+ 
+ "name": "Simple Notes",
+ "description": "Dead Simple Notes.",
+ "version": "0.1",
+ 
+ "permissions": ["storage"],
+ "browser_action": {
+    "default_icon": "notes.png", "default_popup": "popup.html"
+ },
+ "author": "Dylan Chun Wong",
+ "icons": {"128": "notes.png"}
+
+}
