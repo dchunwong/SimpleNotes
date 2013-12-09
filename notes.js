@@ -30,6 +30,10 @@ var noteLogic = {
         if(text == ""){
             return;
         }
+        if(notes.length >=512){
+            warning.innerHTML = "Max Notes Reached! Try Deleting Some.";
+            return;
+        }
         notes.push(text);
         chrome.storage.sync.set({"notes": JSON.stringify(notes)});
         this.update(text);
@@ -109,6 +113,10 @@ document.getElementById("delete").onclick = function(){noteLogic.deleteToggle();
 
 noteField.onkeydown = function(e){
     if(e.keyCode == 13 && !e.shiftKey){
+        if(noteLogic.editing){
+            noteLogic.deleteNote(noteLogic.editing);
+            noteLogic.editing = undefined;
+        }
         noteLogic.createNote(noteField);
         noteField.blur();
     }

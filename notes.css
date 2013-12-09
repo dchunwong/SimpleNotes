@@ -14,6 +14,7 @@ body{
 #newField{
     overflow: auto;
     height: auto;
+    margin-bottom: 1px;
 }    
 #warning:hover{
     background-color: #FFFFFF;
@@ -33,6 +34,9 @@ body{
     border-top: 1px solid #E0E0E0;
 }
 
+p{
+    margin: 0;
+}
 li{
     list-style: none;
     left: 0;
@@ -55,10 +59,9 @@ li:hover{
 }
 ul{
     padding-left: 0;
+    margin-top: 3px;
 }
 hr{
-    margin-left: 15px;
-    margin-right: 15px;
     border-top: 1px solid #F0F0F0;
 
 }
