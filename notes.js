@@ -3,7 +3,7 @@ var noteList = document.getElementById('notes');
 var noteNodes = document.getElementsByClassName("entry");
 var noteField = document.getElementById("newNote");
 var warning = document.getElementById("warning");
-chrome.storage.local.get("notes", function(result){
+chrome.storage.sync.get("notes", function(result){
     notes = result.notes
     if(!notes){
         notes = [];
@@ -31,7 +31,7 @@ var noteLogic = {
             return;
         }
         notes.push(text);
-        chrome.storage.local.set({"notes": JSON.stringify(notes)});
+        chrome.storage.sync.set({"notes": JSON.stringify(notes)});
         this.update(text);
     },
     update: function(text){
@@ -87,7 +87,7 @@ var noteLogic = {
                         noteList.removeChild(noteElement);
                         removed = cleanNote(noteElement.innerHTML);
                         notes.splice(notes.indexOf(removed), 1);
-                        chrome.storage.local.set({"notes": JSON.stringify(notes)});
+                        chrome.storage.sync.set({"notes": JSON.stringify(notes)});
 
         }
 
