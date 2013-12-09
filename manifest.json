@@ -1,9 +1,11 @@
 {
  "manifest_version": 2,
  
- "name": "Simple Notes",
+ "name": "Tiny Notes",
  "description": "Dead Simple Notes.",
  "version": "0.1",
+ "default_locale": "en",
+ "offline_enabled": true,
  
  "permissions": ["storage"],
  "browser_action": {
